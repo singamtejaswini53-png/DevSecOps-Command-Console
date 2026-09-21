@@ -5,14 +5,17 @@
 
 #include "../include/shell.h"
 #include "../include/input.h"
+#include "../include/parser.h"
 
 int main()
 {
     char *line;
+    char **tokens;
+    int i;
 
-    printf("============================================\n");
-    printf("%s Version %s\n", SHELL_NAME, VERSION);
-    printf("============================================\n");
+    printf("=====================================\n");
+    printf("DevSecOps Command Console Version 3.0\n");
+    printf("=====================================\n");
 
     while (1)
     {
@@ -26,11 +29,16 @@ int main()
             break;
         }
 
-        if (strlen(line) != 0)
+        tokens = parse_line(line);
+
+        printf("\nParsed Tokens\n");
+
+        for (i = 0; tokens[i] != NULL; i++)
         {
-            printf("You entered: %s\n", line);
+            printf("argv[%d] = %s\n", i, tokens[i]);
         }
 
+        free_tokens(tokens);
         free(line);
     }
 

@@ -45,3 +45,10 @@ make run
 - Automatic buffer expansion using realloc()
 - Proper memory cleanup using free()
 - Modular input handling using input.h and input.c
+
+## Week 3 Features
+
+- Command parsing using strtok()
+- Dynamic argv[] construction
+- Modular parser implementation
+- Ready for process execution with execvp()
