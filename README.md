@@ -60,3 +60,16 @@ make run
 - Parent-child synchronization using waitpid()
 - Error handling using perror()
 - Execution of real Linux commands
+
+## Week 5 Features
+
+- Built-in command support
+- `cd` command
+- `pwd` command
+- `help` command
+- `clear` command
+- `exit` command
+- Environment variable support using `getenv()`
+- Separation of built-in and external commands
+- Built-in commands execute inside the shell
+- External commands execute using `fork()` and `execvp()`
