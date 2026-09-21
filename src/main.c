@@ -1,35 +1,40 @@
+
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-#define MAX_INPUT 1024
+#include "../include/shell.h"
+#include "../include/input.h"
 
 int main()
 {
-    char input[MAX_INPUT];
+    char *line;
 
     printf("============================================\n");
-    printf(" Welcome to DevSecOps Command Console\n");
+    printf("%s Version %s\n", SHELL_NAME, VERSION);
     printf("============================================\n");
 
     while (1)
     {
         printf("devshell> ");
 
-        if (fgets(input, sizeof(input), stdin) == NULL)
+        line = read_line();
+
+        if (strcmp(line, "exit") == 0)
         {
+            free(line);
             break;
         }
 
-        input[strcspn(input, "\n")] = '\0';
-
-        if (strcmp(input, "exit") == 0)
+        if (strlen(line) != 0)
         {
-            printf("Exiting DevSecOps Command Console...\n");
-            break;
+            printf("You entered: %s\n", line);
         }
 
-        printf("You entered: %s\n", input);
+        free(line);
     }
+
+    printf("Goodbye!\n");
 
     return 0;
 }
