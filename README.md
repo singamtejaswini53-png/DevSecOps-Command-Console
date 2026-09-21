@@ -52,3 +52,11 @@ make run
 - Dynamic argv[] construction
 - Modular parser implementation
 - Ready for process execution with execvp()
+
+## Week 4 Features
+
+- Process creation using fork()
+- Command execution using execvp()
+- Parent-child synchronization using waitpid()
+- Error handling using perror()
+- Execution of real Linux commands
