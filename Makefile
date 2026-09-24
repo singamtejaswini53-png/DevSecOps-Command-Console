@@ -13,8 +13,9 @@ TARGET = bin/devshell
 
 FIFO_SERVER = bin/fifo_server
 FIFO_CLIENT = bin/fifo_client
+SIGNAL_HANDLER = bin/signal_handler
 
-all: $(TARGET) $(FIFO_SERVER) $(FIFO_CLIENT)
+all: $(TARGET) $(FIFO_SERVER) $(FIFO_CLIENT) $(SIGNAL_HANDLER)
 
 $(TARGET):
 	mkdir -p bin
@@ -27,6 +28,10 @@ $(FIFO_SERVER):
 $(FIFO_CLIENT):
 	mkdir -p bin
 	$(CC) src/fifo_client.c -o $(FIFO_CLIENT)
+
+$(SIGNAL_HANDLER):
+	mkdir -p bin
+	$(CC) src/signal_handler.c -o $(SIGNAL_HANDLER)
 
 run:
 	./$(TARGET)
