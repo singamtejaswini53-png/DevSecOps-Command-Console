@@ -73,3 +73,12 @@ make run
 - Separation of built-in and external commands
 - Built-in commands execute inside the shell
 - External commands execute using `fork()` and `execvp()`
+
+## Week 6 Features
+
+- Signal handling
+- SIGINT support
+- SIGCHLD support
+- Shell survives Ctrl+C
+- Child process cleanup using waitpid()
+- Zombie process prevention
